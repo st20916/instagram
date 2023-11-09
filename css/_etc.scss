@@ -1,0 +1,13 @@
+@media screen and (min-width: 1001px) {
+    .hidden_menu {
+        .scroll_inner {
+            display: none;
+        }  
+    }
+}
+
+@media all and (max-width: 1000px) {
+    .side_box {
+        display: none;
+    }
+}

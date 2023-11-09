@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/main.css">
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/main.js"></script>
+</head>
+<body>
+    <section id="container">
+        <!-- header -->
+        <header id="header">
+            <section class="inner">
+                <h1 class="logo">
+                    <a href="./index.html"> 
+                        <div class="insta_write_logo"></div>
+                    </a>
+                </h1>
+            </section>
+        </header>
+
+        <!-- hidden menu -->
+        <div class="hidden_menu">
+            <div class="scroll_inner">
+                <div class="user">
+                    <div class="thumb_img newStory">
+                        <img src="./images/thumb02.jpg" alt="프로필사진">
+                         </div>
+                        <div class="id">kim</div>
+                </div>
+                <div class="user">
+                    <div class="thumb_img newStory">
+                        <img src="./images/thumb02.jpg" alt="프로필사진">
+                         </div>
+                        <div class="id">jeon</div>
+                </div>
+                <div class="user">
+                    <div class="thumb_img newStory">
+                        <img src="./images/thumb02.jpg" alt="프로필사진">
+                         </div>
+                        <div class="id">lee</div>
+                </div>
+                <div class="user">
+                    <div class="thumb_img">
+                        <img src="./images/thumb02.jpg" alt="프로필사진">
+                         </div>
+                        <div class="id">hwang</div>
+                </div>
+                <div class="user">
+                    <div class="thumb_img">
+                        <img src="./images/thumb02.jpg" alt="프로필사진">
+                         </div>
+                        <div class="id">park</div>
+                </div>
+                <div class="user">
+                    <div class="thumb_img">
+                        <img src="./images/thumb02.jpg" alt="프로필사진">
+                         </div>
+                        <div class="id">hong</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- main -->
+        <section id="main_container" data-container>
+            <div class="inner">
+                <div class="contents_box">
+                    <form id="cmmtForm">
+                        <article class="contents">
+                            <header class="top">
+                                <div class="profile_img">
+                                    <img src="./images/thumb.jpg" alt="프로필이미지">
+                                </div>
+                                <div class="user_name">
+                                    <div class="nick_name m_text">llhwyyy</div>
+                                    <div class="country s_text">대전</div>
+                                </div>
+                                <div class="timer">• 7시간 </div>
+                            </header>
+
+                            <div class="img_section">
+                                <div class="trans_inner">
+                                    <div>
+                                        <img src="./images/img01.jpg" alt="img01">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bottom_icons">
+                                <div class="left_icons">
+                                    <div class="insta_heart_icon_outline" data-event="like"></div>
+                                    <div class="insta_heart_icon"></div>
+                                    <div class="insta_bubble_icon"></div>
+                                    <div class="insta_share_icon"></div>
+                            </div>
+                            <div class="right_icon">
+                                <div class="insta_bookmark_outline" data-event="bookmark"></div>
+                                <div class="insta_bookmark"></div>
+                                </div>
+                            </div>
+                            <div class="likes m_text">
+                                좋아요
+                                <span id="count">43개</span>
+                            </div>
+
+                            <div class="comment_container">
+                                <div class="comment">
+                                    <div class="nick_name m_text">llhwyyy</div>
+                                    <div>갑천 엑스포다리</div>
+                                </div>
+                            </div>
+
+                            <div class="reComment" id="idx1">
+                            </div>
+
+                            <div class="comment_field">
+                                <input type="text" data-comment="idx1" placeholder="댓글달기...">
+                                <div class="upload_btn m_text">게시</div>
+                            </div>
+                        </article>
+
+                        <article class="contents">
+                            <header class="top">
+                                <div class="profile_img">
+                                    <img src="./images/thumb.jpg" alt="프로필이미지">
+                                </div>
+                                <div class="user_name">
+                                    <div class="nick_name m_text">llhwyyy</div>
+                                    <div class="country s_text">방콕</div>
+                                </div>
+                                <div class="timer">• 1주 </div>
+                            </header>
+
+                            <div class="img_section">
+                                <div class="trans_inner">
+                                    <div>
+                                        <img src="./images/img02.jpg" alt="img02">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bottom_icons">
+                                <div class="left_icons">
+                                    <div class="insta_heart_icon_outline" data-event="like"></div>
+                                    <div class="insta_heart_icon"></div>
+                                    <div class="insta_bubble_icon"></div>
+                                    <div class="insta_share_icon"></div>
+                            </div>
+                            <div class="right_icon">
+                                <div class="insta_bookmark_outline" data-event="bookmark"></div>
+                                <div class="insta_bookmark"></div>
+                                </div>
+                            </div>
+                            <div class="likes m_text">
+                                좋아요
+                                <span id="count">215개</span>
+                            </div>
+
+                            <div class="comment_container">
+                                <div class="comment">
+                                    <div class="nick_name m_text">llhwyyy</div>
+                                    <div>사와디캅</div>
+                                </div>
+                            </div>
+
+                            <div class="reComment" id="idx2"></div>
+
+                            <div class="comment_field">
+                            <input type="text" data-comment="idx2" placeholder="댓글달기...">
+                            <div class="upload_btn m_text">게시</div>
+                            </div>
+                        </article>
+
+                        <article class="contents">
+                            <header class="top">
+                                <div class="profile_img">
+                                    <img src="./images/thumb.jpg" alt="프로필이미지">
+                                </div>
+                                <div class="user_name">
+                                    <div class="nick_name m_text">llhwyyy</div>
+                                    <div class="country s_text">대전</div>
+                                </div>
+                                <div class="timer">• 2주 </div>
+                            </header>
+
+                            <div class="img_section">
+                                <div class="trans_inner">
+                                    <div>
+                                        <img src="./images/img03.jpg" alt="img03">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bottom_icons">
+                                <div class="left_icons">
+                                    <div class="insta_heart_icon_outline" data-event="like"></div>
+                                    <div class="insta_heart_icon"></div>
+                                    <div class="insta_bubble_icon"></div>
+                                    <div class="insta_share_icon"></div>
+                            </div>
+                            <div class="right_icon">
+                                <div class="insta_bookmark_outline" data-event="bookmark"></div>
+                                <div class="insta_bookmark"></div>
+                                </div>
+                            </div>
+                            <div class="likes m_text">
+                                좋아요
+                                <span id="count">43개</span>
+                            </div>
+
+                            <div class="comment_container">
+                                <div class="comment">
+                                    <div class="nick_name m_text">llhwyyy</div>
+                                    <div>산책</div>
+                                </div>
+                            </div>
+
+                            <div class="reComment" id="idx3"></div>
+
+                            <div class="comment_field">
+                            <input type="text" data-comment="idx3" placeholder="댓글달기...">
+                            <div class="upload_btn m_text">게시</div>
+                            </div>
+                        </article>
+                    </form>
+                </div>
+
+                <!-- side -->
+                <div class="side_box">
+                    <article>
+                        <div class="user_profile">
+                            <div class="profile_thumb">
+                                <img src="./images/thumb.jpg" alt="프로필사진">
+                            </div>
+                            <div class="detail">
+                                <div class="id m_text">llhwyyy</div>
+                            </div>
+                            <div class="c_text">전환</div>
+                        </div>
+                    </article>
+
+                    <article class="story">
+                        <header class="story_header">
+                            <div>스토리</div>
+                            <div class="more">모두 보기</div>
+                        </header>
+                        <div class="thumb_user">
+                            <div class="profile_thumb newStory">
+                                <img src="./images/thumb02.jpg" alt="프로필사진">
+                            </div>
+                            <div class="detail">
+                                <div class="id">kim</div>
+                            </div>
+                        </div>
+                        <div class="thumb_user">
+                            <div class="profile_thumb newStory">
+                                <img src="./images/thumb02.jpg" alt="프로필사진">
+                            </div>
+                            <div class="detail">
+                                <div class="id">jeon</div>
+                            </div>
+                        </div>
+                        <div class="thumb_user">
+                            <div class="profile_thumb newStory">
+                                <img src="./images/thumb02.jpg" alt="프로필사진">
+                            </div>
+                            <div class="detail">
+                                <div class="id">lee</div>
+                            </div>
+                        </div>
+                        <div class="thumb_user">
+                            <div class="profile_thumb">
+                                <img src="./images/thumb02.jpg" alt="프로필사진">
+                            </div>
+                            <div class="detail">
+                                <div class="id">hwang</div>
+                            </div>
+                        </div>
+                        <div class="thumb_user">
+                            <div class="profile_thumb">
+                                <img src="./images/thumb02.jpg" alt="프로필사진">
+                            </div>
+                            <div class="detail">
+                                <div class="id">park</div>
+                            </div>
+                        </div>
+                    </article>
+    
+                    <article class="recommend">
+                        <header class="reco_header">
+                            <div>회원님을 위한 추천</div>
+                            <div class="more">모두 보기</div>
+                        </header>
+                        <div class="thumb_user">
+                            <div class="profile_thumb reco">
+                                <img src="./images/thumb02.jpg" alt="프로필사진">
+                            </div>
+                            <div class="detail">
+                                <div class="id">lim</div>
+                                <div class="follow">kim 외 1명이 팔로우합니다.</div>
+                            </div>
+                            <div class="c_text">팔로우</div>
+                        </div>
+                        <div class="thumb_user">
+                            <div class="profile_thumb reco">
+                                <img src="./images/thumb02.jpg" alt="프로필사진">
+                            </div>
+                            <div class="detail">
+                                <div class="id">jo</div>
+                                <div class="follow">jeonHyunWoo 외 15명이 팔로우합니다.</div>
+                            </div>
+                            <div class="c_text">팔로우</div>
+                        </div>
+                        <div class="thumb_user">
+                            <div class="profile_thumb reco">
+                                <img src="./images/thumb02.jpg" alt="프로필사진">
+                            </div>
+                            <div class="detail">
+                                <div class="id">kang</div>
+                                <div class="follow">park 외 3명이 팔로우합니다.</div>
+                            </div>
+                            <div class="c_text">팔로우</div>
+                        </div>
+                        <div class="thumb_user">
+                            <div class="profile_thumb reco">
+                                <img src="./images/thumb02.jpg" alt="프로필사진">
+                            </div>
+                            <div class="detail">
+                                <div class="id">yoo</div>
+                                <div class="follow">lee님이 팔로우합니다.</div>
+                            </div>
+                            <div class="c_text">팔로우</div>
+                        </div>
+                        <div class="thumb_user">
+                            <div class="profile_thumb reco">
+                                <img src="./images/thumb02.jpg" alt="프로필사진">
+                            </div>
+                            <div class="detail">
+                                <div class="id">back</div>
+                                <div class="follow">hong님이 팔로우합니다.</div>
+                            </div>
+                            <div class="c_text">팔로우</div>
+                        </div>
+                    </article>
+                </div>
+
+
+            </div>
+        </section>
+        
+        <!-- modal -->
+        <div class="modal">
+            <div class="modal_content">
+                <button id="cmmtDeclare">신고</button>
+                <button id="cmmtDelete">삭제</button>
+                <button id="modalClose">취소</button>
+            </div>
+        </div>
+</body>
+</html>
