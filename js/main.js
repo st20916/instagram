@@ -1,25 +1,6 @@
 $(function() {
     var $container = $('[data-container]'),
         $modal = $('.modal');
-
-    getComment();
-
-    // Scroll (Sticky 효과)
-    $(window).on('scroll', function(e) {
-        if ($(window).scrollTop() > 200) {
-            $('.side_box').css({
-                'position': 'fixed',
-                'top': '20px',
-                'right': '190px'
-            });
-        } else {
-            $('.side_box').css({
-                'position': 'absolute',
-                'top': '0',
-                'right': '-20px'
-            });
-        }
-    });
     // Container 내 event 호출
     $container.on('click', '[data-event]', function(e) {
         var $this = $(this),
@@ -64,28 +45,66 @@ $(function() {
     // 댓글 창 입력 후 게시 클릭 시, data-comment에 등록
     $('.upload_btn').on('click', function(e) {
         var $commentId = $(this).siblings().data('comment') || '',
-            comments = getComment(),
-            $val = $($(this).siblings()).val();
-    
-        // val 값으로 json 저장
+        $val = $($(this).siblings()).val();
+        
+        // val 값으로 json 저장..
         addComment($val, $commentId);
+        comments = getComment();
         
         $('#' + $commentId).html("");
     
         comments.forEach(function (comment, idx) {
-            $('#' + comment.id).append(
-                '<div class="comment_container">'
-                +   '   <input type="hidden" value="'+ Number(idx + 1) + '" />'
-                +   '   <div class="comment">'
-                +   '       <div class="nick_name m_text">User</div>'
-                +   '       <div>' + comment.text + '</div>'
-                +   '   </div>'
-                +   '</div>'
-            )
+            if (comment.id == $commentId) {
+                $('#' + comment.id).append(
+                    '<div class="comment_container">'
+                    +   '   <input type="hidden" name="comment" value="' + Number(idx + 1) + '">'
+                    +   '   <div class="comment">'
+                    +   '       <img src="../images/thumb02.jpg" alt="profile" />'
+                    +   '       <div class="nick_name m_text">User</div>'
+                    +   '       <div>' + comment.text + '</div>'
+                    +   '       <a href="javascript:void(0);" class="comment__modal" data-id="' + comment.id + '"></a>'
+                    +   '   </div>'
+                    +   '</div>'
+                )
+            }
         });
     
-        $(this).siblings().text();
+        $(this).siblings("input").val('');
         $(this).hide();
+    });
+    // localstorage 로드
+    var firstComments = getComment();
+    
+    firstComments.forEach(function (comment, idx) {
+        $('#' + comment.id).append(
+            '<div class="comment_container">'
+            +   '   <input type="hidden" name="comment" value="' + Number(idx + 1) + '">'
+            +   '   <div class="comment">'
+            +   '       <img src="../images/thumb02.jpg" alt="profile" />'
+            +   '       <div class="nick_name m_text">User</div>'
+            +   '       <div>' + comment.text + '</div>'
+            +   '       <a href="javascript:void(0);" class="comment__modal" data-id="' + comment.id + '"></a>'
+            +   '   </div>'
+            +   '</div>'
+        )
+    });
+    // 댓글 옆 아이콘 클릭 시, 모달 팝업 표출
+    $('.comment_container').find('.comment__modal').on('click', function(e) {
+        var $this = $(this);
+
+        $modal.addClass('show');
+        $modal.attr('data-id', $(this).data('id'));
+        $modal.find('#cmmtDelete').attr('data-num', $this.closest('div').siblings('input').val());
+    });
+    // 취소 버튼 클릭 시, modal show 클래스 제거
+    $('#modalClose').on('click', function() {
+        $(this).closest('.modal').removeClass('show');
+        $(this).closest('.modal').removeAttr('data-id');
+    });
+    // 삭제 버튼 클릭 시, 해당 data-num에 대한 localstorage 제거
+    $('#cmmtDelete').on('click', function() {
+        var closestModal = $(this).closest('.modal'),
+            id = closestModal.data('id') || '';
     });
 
     /**
@@ -98,7 +117,6 @@ $(function() {
     function getComment() {
         return JSON.parse(localStorage.getItem("comments")) || [];
     }
-
     /**
      * function name : addComment
      * function Description : Comment Value 추가 
@@ -112,15 +130,18 @@ $(function() {
         comments.push({text, id});
         localStorage.setItem('comments', JSON.stringify(comments));
     }
-
     /**
-     * function name : generateUniqueId
-     * function description : 고유 id 생성
+     * function name : deleteComment
+     * function Description : Comment Value 제거
      * 
-     * @returns 
-     * 
+     * @param {*} num 
      */
-    function generateUniqueId() {
-        return Date.now().toString(36) + Math.random().toString(36).substr(2, 5);
+    function deleteComment(index) {
+        var comments = getComment();
+
+        comments.splice(index - 1);
+        localStorage.setItem('comments', JSON.stringify(comments));
+
+        location.reload();
     }
 });
