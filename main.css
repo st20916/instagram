@@ -1,0 +1,48 @@
+@import url("../css/reset.css");
+@import url("../css/style.css");
+.contents .comment_container .comment {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+
+.contents .comment_container .comment img {
+  max-width: 30px;
+}
+
+.contents .comment_container .comment .nick_name {
+  margin-right: 0;
+}
+
+.contents .comment_container .comment .comment__modal {
+  position: relative;
+  display: block;
+  width: 26px;
+  height: 20px;
+  background-image: url("../images/background02.png");
+  background-position: -111px -11px;
+  background-repeat: no-repeat;
+}
+
+.modal {
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.modal.show {
+  display: block;
+}
+
+@media screen and (min-width: 1001px) {
+  .hidden_menu .scroll_inner {
+    display: none;
+  }
+}
+
+@media all and (max-width: 1000px) {
+  .side_box {
+    display: none;
+  }
+}
+/*# sourceMappingURL=main.css.map */
