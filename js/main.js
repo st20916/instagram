@@ -93,6 +93,13 @@ $(document).ready(function() {
         $(this).siblings("input").val('');
         $(this).hide();
     });
+    // 댓글 창 입력 후, Enter 시 댓글 추가
+    $('.comment_field > input[type="text"]').on('keydown', function(e) {
+        // 엔터키가 눌렸을 때
+        if (e.which == 13 || e.keyCode == 13) {
+            
+        }
+    });
     // 댓글 옆 아이콘 클릭 시, 모달 팝업 표출
     // 동적으로 생성 이후, 최초 한 번만 이벤트가 바인딩 되기 때문에 body에다가 이벤트 위임
     $('body').on('click', '.comment__modal' ,function(e) {        
