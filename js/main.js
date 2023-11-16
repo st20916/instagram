@@ -111,6 +111,7 @@ $(document).ready(function() {
             id = closestModal.data('id') || '';
 
         deleteComment($(this).data('num'));
+        location.reload();
     });
 
     /**
