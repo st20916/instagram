@@ -46,7 +46,7 @@ $(document).ready(function() {
             '<div class="comment_container">'
             +   '   <input type="hidden" name="comment" value="' + Number(idx + 1) + '">'
             +   '   <div class="comment">'
-            +   '       <img src="/images/thumb02.jpg" alt="profile" />'
+            +   '       <img src="./images/thumb02.jpg" alt="profile" />'
             +   '       <div class="nick_name m_text">User</div>'
             +   '       <div>' + comment.text + '</div>'
             +   '       <a href="javascript:void(0);" id="cmt' + Number(idx + 1) + '" class="comment__modal" data-id="' + comment.id + '"></a>'
@@ -55,8 +55,10 @@ $(document).ready(function() {
         )
     });
     // 댓글 창에 onFocus 통해 게시 Show
-    $('.comment_field > input[type="text"]').on('focus', function(e) {
+    $('.comment_field > input[type="text"]').on('input', function(e) {
         $(this).siblings().show();
+    }).on('blur', function() {
+        $(this).siblings().hide();
     });
     // 댓글 창 입력 후 게시 클릭 시, data-comment에 등록
     $('.upload_btn').on('click', function(e) {
@@ -79,7 +81,7 @@ $(document).ready(function() {
                     '<div class="comment_container">'
                     +   '   <input type="hidden" name="comment" value="' + Number(idx + 1) + '">'
                     +   '   <div class="comment">'
-                    +   '       <img src="/images/thumb02.jpg" alt="profile" />'
+                    +   '       <img src="./images/thumb02.jpg" alt="profile" />'
                     +   '       <div class="nick_name m_text">User</div>'
                     +   '       <div>' + comment.text + '</div>'
                     +   '       <a href="javascript:void(0);" id="cmt' + Number(idx + 1) + '" class="comment__modal" data-id="' + comment.id + '"></a>'
