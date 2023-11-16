@@ -105,12 +105,13 @@ $(document).ready(function() {
         $(this).closest('.modal').removeClass('show');
         $(this).closest('.modal').removeAttr('data-id');
     });
-    // 삭제 버튼 클릭 시,
+    // 삭제 버튼 클릭 시, 화면 reload
     $('#cmmtDelete').on('click', function() {
         var closestModal = $(this).closest('.modal'),
             id = closestModal.data('id') || '';
 
         deleteComment($(this).data('num'));
+
         location.reload();
     });
 
